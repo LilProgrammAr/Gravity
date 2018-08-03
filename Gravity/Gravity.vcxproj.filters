@@ -16,10 +16,18 @@
     <Filter Include="Core">
       <UniqueIdentifier>{682c29ad-ad1b-4024-beee-41313beadbcf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\vector2">
+      <UniqueIdentifier>{0fd78551-c2c7-459a-8cb5-1279307f7729}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="vector2.h">
+      <Filter>Core\vector2</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
