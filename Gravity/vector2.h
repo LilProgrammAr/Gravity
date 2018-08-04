@@ -7,6 +7,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+template<typename T> class vector2;
+
+using vector2i = vector2<int>;
+using vector2f = vector2<float>;
+using vector2d = vector2<double>;
+
 template<typename T>
 class vector2
 {
@@ -68,7 +74,7 @@ template<typename T>
 inline vector2<T>::vector2(T x, T y) : x(x), y(y) {}
 
 template<typename T>
-inline vector2 vector2<T>::normalized() const
+inline vector2<T> vector2<T>::normalized() const
 {
 	auto length = dynamic_cast<double>(sqrt(x * x + y * y));
 	return vector2(x / length, y / length);
@@ -90,28 +96,28 @@ inline vector2<T>::operator sf::Vector2i()
 
 template<typename T>
 template<typename A>
-inline vector2 vector2<T>::operator+(const vector2<A>& rhs) const
+inline vector2<T> vector2<T>::operator+(const vector2<A>& rhs) const
 {
 	return vector2(this->x + rhs.x, this->y + rhs.y);
 }
 
 template<typename T>
 template<typename A>
-inline vector2 vector2<T>::operator-(const vector2<A>& rhs) const
+inline vector2<T> vector2<T>::operator-(const vector2<A>& rhs) const
 {
 	return vector2(this->x - rhs.x, this->y - rhs.y);
 }
 
 template<typename T>
 template<typename A>
-inline vector2 vector2<T>::operator*(const A & rhs) const
+inline vector2<T> vector2<T>::operator*(const A & rhs) const
 {
 	return vector2(this->x * rhs, this->y * rhs);
 }
 
 template<typename T>
 template<typename A>
-inline vector2 vector2<T>::operator/(const A & rhs) const
+inline vector2<T> vector2<T>::operator/(const A & rhs) const
 {
 	return vector2(this->x / rhs, this->y / rhs);
 }

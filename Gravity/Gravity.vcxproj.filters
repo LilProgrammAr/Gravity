@@ -16,18 +16,42 @@
     <Filter Include="Core">
       <UniqueIdentifier>{682c29ad-ad1b-4024-beee-41313beadbcf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\vector2">
+    <Filter Include="Core\Vector">
       <UniqueIdentifier>{0fd78551-c2c7-459a-8cb5-1279307f7729}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Game Settings">
+      <UniqueIdentifier>{497c1148-68e0-4573-8690-3162c37c7c53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Config">
+      <UniqueIdentifier>{d7c28e5c-8e38-4629-a7ea-3ae5f983822a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes">
+      <UniqueIdentifier>{9cddf7d5-82c2-49d0-916d-bd3be870c76e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes\Base class">
+      <UniqueIdentifier>{495a3abd-cfd1-493d-b242-40407d2e817c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Scenes\Base class</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vector2.h">
-      <Filter>Core\vector2</Filter>
+      <Filter>Core\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>Core\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSettings.h">
+      <Filter>Core\Game Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Scenes\Base class</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
