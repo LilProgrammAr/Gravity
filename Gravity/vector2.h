@@ -88,10 +88,6 @@ inline vector2<T>::operator sf::Vector2i()
 						dynamic_cast<int>(this->y));
 }
 
-
-
-#endif //CLASS_VECTOR2_H
-
 template<typename T>
 template<typename A>
 inline vector2 vector2<T>::operator+(const vector2<A>& rhs) const
@@ -119,3 +115,5 @@ inline vector2 vector2<T>::operator/(const A & rhs) const
 {
 	return vector2(this->x / rhs, this->y / rhs);
 }
+
+#endif //CLASS_VECTOR2_H
