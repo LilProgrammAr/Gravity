@@ -6,10 +6,6 @@
 
 int main() {
 
-	auto a = vector2i(1, 2);
-	
-	std::cout << (a * 5).x << ' ' << (a * 5).y << std::endl;
-
 	auto window = std::make_shared<sf::RenderWindow>();
 	auto event = std::make_shared<sf::Event>();
 
@@ -25,5 +21,5 @@ int main() {
 		window->clear(sf::Color::Black);
 
 		window->display();
-	}				
+	}			
 }

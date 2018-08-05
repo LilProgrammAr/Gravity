@@ -31,6 +31,15 @@
     <Filter Include="Scenes\Base class">
       <UniqueIdentifier>{495a3abd-cfd1-493d-b242-40407d2e817c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scenes\Main scene">
+      <UniqueIdentifier>{20e5fcca-5021-43c0-8abd-31de164ca662}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI">
+      <UniqueIdentifier>{27b04ee2-085d-442c-ab67-e73f211b8f1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI\Base GUI class">
+      <UniqueIdentifier>{a328aa64-0914-4d0e-8956-b20d81caac70}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -38,6 +47,12 @@
     </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>Scenes\Base class</Filter>
+    </ClCompile>
+    <ClCompile Include="MainScene.cpp">
+      <Filter>Scenes\Main scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiWidget.cpp">
+      <Filter>GUI\Base GUI class</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +67,12 @@
     </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>Scenes\Base class</Filter>
+    </ClInclude>
+    <ClInclude Include="MainScene.h">
+      <Filter>Scenes\Main scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiWidget.h">
+      <Filter>GUI\Base GUI class</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

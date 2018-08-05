@@ -27,7 +27,7 @@ public:
 	virtual void draw() = 0;
 	virtual EventList checkEvent() = 0;
 
-private:
+protected:
 	Config cfg;
 	GameSettings gs;
 
