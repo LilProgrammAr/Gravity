@@ -1,25 +1,27 @@
-#include <SFML/Graphics.hpp>
+﻿#include <SFML/Graphics.hpp>
 #include <iostream>
 #include "vector2.h"
+#include "Config.h"
+#include "functions.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
 int main() {
 
-	auto window = std::make_shared<sf::RenderWindow>();
-	auto event = std::make_shared<sf::Event>();
+	Config cfg = initialize();
+	
 
-	window->create(sf::VideoMode::getDesktopMode(), "Gravity");
+	cfg.window->create(sf::VideoMode::getDesktopMode(), "Gravity");
 
-	while (window->isOpen()) {
-		while (window->pollEvent(*event)) {
-			if (event->type == sf::Event::Closed) {
-				window->close();
+	while (cfg.window->isOpen()) {
+		while (cfg.window->pollEvent(*(cfg.event))) {
+			if (cfg.event->type == sf::Event::Closed) {
+				cfg.window->close();
 			}
 		}
 
-		window->clear(sf::Color::Black);
+		cfg.window->clear(sf::Color::Black);
 
-		window->display();
+		cfg.window->display();
 	}			
 }

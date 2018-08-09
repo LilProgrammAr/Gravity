@@ -125,16 +125,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="functions.cpp" />
+    <ClCompile Include="GuiButton.cpp" />
     <ClCompile Include="GuiWidget.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainScene.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h" />
+    <ClInclude Include="functions.h" />
     <ClInclude Include="GameSettings.h" />
+    <ClInclude Include="GuiButton.h" />
     <ClInclude Include="GuiWidget.h" />
     <ClInclude Include="MainScene.h" />
+    <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="vector2.h" />
   </ItemGroup>
