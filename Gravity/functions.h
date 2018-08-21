@@ -5,6 +5,9 @@
 #include <SFML/Graphics.hpp>
 #include "Config.h"
 
-Config initialize();
+namespace core {
 
+	Config initialize();
+
+}
 #endif //FUNCTIONS_H

@@ -8,9 +8,6 @@
     <Filter Include="Core">
       <UniqueIdentifier>{682c29ad-ad1b-4024-beee-41313beadbcf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Vector">
-      <UniqueIdentifier>{0fd78551-c2c7-459a-8cb5-1279307f7729}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Core\Game Settings">
       <UniqueIdentifier>{497c1148-68e0-4573-8690-3162c37c7c53}</UniqueIdentifier>
     </Filter>
@@ -35,33 +32,35 @@
     <Filter Include="GUI\GUI Button">
       <UniqueIdentifier>{1d701081-1776-4760-b2d1-91dc530eca7d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Rectangle">
-      <UniqueIdentifier>{02039f89-9abf-46e3-bcf4-ae10dada5258}</UniqueIdentifier>
+    <Filter Include="Core\Functions">
+      <UniqueIdentifier>{2912cb3c-877c-4577-9987-64880cc5ff4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Geometry">
+      <UniqueIdentifier>{c90cc20d-5665-4f02-a904-04737c9fcce1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Geometry\Vector">
+      <UniqueIdentifier>{0fd78551-c2c7-459a-8cb5-1279307f7729}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Scene.cpp">
       <Filter>Scenes\Base class</Filter>
     </ClCompile>
-    <ClCompile Include="MainScene.cpp">
-      <Filter>Scenes\Main scene</Filter>
-    </ClCompile>
     <ClCompile Include="GuiWidget.cpp">
       <Filter>GUI\Base GUI class</Filter>
-    </ClCompile>
-    <ClCompile Include="functions.cpp">
-      <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="GuiButton.cpp">
       <Filter>GUI\GUI Button</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="functions.cpp">
+      <Filter>Core\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Scenes\Main scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="vector2.h">
-      <Filter>Core\Vector</Filter>
-    </ClInclude>
     <ClInclude Include="Config.h">
       <Filter>Core\Config</Filter>
     </ClInclude>
@@ -71,18 +70,26 @@
     <ClInclude Include="Scene.h">
       <Filter>Scenes\Base class</Filter>
     </ClInclude>
-    <ClInclude Include="MainScene.h">
-      <Filter>Scenes\Main scene</Filter>
-    </ClInclude>
     <ClInclude Include="GuiWidget.h">
       <Filter>GUI\Base GUI class</Filter>
-    </ClInclude>
-    <ClInclude Include="functions.h">
-      <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="GuiButton.h">
       <Filter>GUI\GUI Button</Filter>
     </ClInclude>
-    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="Vector2.h">
+      <Filter>Core\Geometry\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="functions.h">
+      <Filter>Core\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="core.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="gui.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>Scenes\Main scene</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -5,11 +5,12 @@
 #include <SFML/Graphics.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////
-
-struct Config {
-	std::shared_ptr<sf::RenderWindow> window;
-	std::shared_ptr<sf::Event> event;
-	std::shared_ptr<sf::Clock> clock;
-};
+namespace core {
+	struct Config {
+		std::shared_ptr<sf::RenderWindow> window;
+		std::shared_ptr<sf::Event> event;
+		std::shared_ptr<sf::Clock> clock;
+	};
+}
 
 #endif //STRUCT_RENDER_SETTINGS_H

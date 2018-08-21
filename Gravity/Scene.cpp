@@ -2,6 +2,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-Scene::Scene(const Config & obj) : 
+Scene::Scene(const core::Config & obj) : 
 	cfg(obj),
-	gs(GameSettings{true, sf::ContextSettings(), 100}) {}
+	gs(core::GameSettings{true, sf::ContextSettings(), 100}) {}

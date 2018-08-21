@@ -2,14 +2,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-gui::GuiWidget::GuiWidget(const Config& cfg) : cfg(cfg) {}
+gui::GuiWidget::GuiWidget(const core::Config& cfg) : cfg(cfg) {}
 
-gui::GuiWidget::GuiWidget(const Config & cfg, char *& filepath) : cfg(cfg)
-{
-	loadFromFile(filepath);
-}
 
-bool gui::GuiWidget::loadFromFile(char *& path) noexcept
+
+bool gui::GuiWidget::loadFromFile(std::string path) noexcept
 {
 	try {
 		if (!image.loadFromFile(path)) return false;
@@ -22,14 +19,19 @@ bool gui::GuiWidget::loadFromFile(char *& path) noexcept
 	return true;
 }
 
-void gui::GuiWidget::loadConfig(const Config & obj) noexcept
+void gui::GuiWidget::loadConfig(const core::Config & obj) noexcept
 {
 	cfg = obj;
 }
 
-void gui::GuiWidget::setPosition(const vector2f & pos)
+sf::Vector2u gui::GuiWidget::getSize()
 {
-	sprite.setPosition(pos - vector2f(image.getSize().x / 2.f,
+	return image.getSize();
+}
+
+void gui::GuiWidget::setPosition(const core::Vector2f & pos)
+{
+	sprite.setPosition(pos - core::Vector2f(image.getSize().x / 2.f,
 									  image.getSize().y / 2.f));
 }
 

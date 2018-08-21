@@ -2,34 +2,62 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-gui::GuiButton::GuiButton(const Config & cfg) : GuiWidget(cfg) {}
+#define event cfg.event
+#define window cfg.window
+#define clock cfg.clock
 
-gui::GuiButton::GuiButton(const Config & cfg, char *& filepath) :
-	GuiWidget(cfg, filepath) {}
+gui::GuiButton::GuiButton(const core::Config & cfg) : GuiWidget(cfg) {}
 
 void gui::GuiButton::draw()
 {
-	cfg.window->draw(sprite);
+	window->draw(sprite);
 }
 
-void gui::GuiButton::checkEvent()
+bool gui::GuiButton::isClicked()
 {
-	switch (state) {
-	case GuiState::IDLE:
-		//if (sf::Mouse::getPosition(*(cfg.window)).x <= )
-
-		break;
-	case GuiState::HOVERED:
-
-		break;
-	case GuiState::PRESSED:
-
-		break;
-	case GuiState::RELEASED:
-
-		break;
-	case GuiState::BUTTON_CLICKED:
-
-		break;
+	auto isHovered = handleHover();
+	if (isHovered) {
+		if (event->type == sf::Event::MouseButtonPressed && 
+			event->key.code == sf::Mouse::Left) {
+			sprite.setColor(sf::Color(133, 133, 133));
+			wasPressed = true;
+		}
+		if (event->type == sf::Event::MouseButtonReleased &&
+			event->key.code == sf::Mouse::Left) {
+			sprite.setColor(sf::Color::White);
+			if (wasPressed) {
+				wasPressed = false;
+				return true;
+			}
+			else return false;
+		}
 	}
+	else return false;
+
 }
+
+bool gui::GuiButton::handleHover()
+{
+	auto mousePos = static_cast<sf::Vector2f>(sf::Mouse::getPosition(*window));
+	auto isHovered = sprite.getGlobalBounds().contains(mousePos);
+	if (isHovered) {
+		if (!wasLarged) {
+			sprite.setScale(1.05f, 1.05f);
+			sprite.setPosition(sprite.getPosition().x - image.getSize().x / 40,
+							   sprite.getPosition().y - image.getSize().y / 40);
+			wasLarged = true;
+		}
+	}
+	else {
+		if (wasLarged) {
+			sprite.setScale(1.f, 1.f);
+			sprite.setPosition(sprite.getPosition().x + image.getSize().x / 40,
+							   sprite.getPosition().y + image.getSize().y / 40);
+			wasLarged = false;
+		}
+	}
+	return isHovered;
+}
+
+
+

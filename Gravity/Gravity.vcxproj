@@ -129,20 +129,20 @@
     <ClCompile Include="GuiButton.cpp" />
     <ClCompile Include="GuiWidget.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MainScene.cpp" />
-    <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h" />
+    <ClInclude Include="core.h" />
     <ClInclude Include="functions.h" />
     <ClInclude Include="GameSettings.h" />
+    <ClInclude Include="gui.h" />
     <ClInclude Include="GuiButton.h" />
     <ClInclude Include="GuiWidget.h" />
-    <ClInclude Include="MainScene.h" />
-    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Scene.h" />
-    <ClInclude Include="vector2.h" />
+    <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
