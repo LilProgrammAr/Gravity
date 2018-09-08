@@ -41,6 +41,9 @@
     <Filter Include="Core\Geometry\Vector">
       <UniqueIdentifier>{0fd78551-c2c7-459a-8cb5-1279307f7729}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GUI\GuiCheckbox">
+      <UniqueIdentifier>{2d7d4893-ea88-49f2-96ea-dea9012d03c7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Scene.cpp">
@@ -53,20 +56,16 @@
       <Filter>GUI\GUI Button</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="functions.cpp">
-      <Filter>Core\Functions</Filter>
-    </ClCompile>
     <ClCompile Include="MainMenu.cpp">
       <Filter>Scenes\Main scene</Filter>
     </ClCompile>
+    <ClCompile Include="Core\functions.cpp" />
+    <ClCompile Include="SettingsMenu.cpp" />
+    <ClCompile Include="GuiCheckbox.cpp">
+      <Filter>GUI\GuiCheckbox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Config.h">
-      <Filter>Core\Config</Filter>
-    </ClInclude>
-    <ClInclude Include="GameSettings.h">
-      <Filter>Core\Game Settings</Filter>
-    </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>Scenes\Base class</Filter>
     </ClInclude>
@@ -76,20 +75,75 @@
     <ClInclude Include="GuiButton.h">
       <Filter>GUI\GUI Button</Filter>
     </ClInclude>
-    <ClInclude Include="Vector2.h">
-      <Filter>Core\Geometry\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="functions.h">
-      <Filter>Core\Functions</Filter>
-    </ClInclude>
-    <ClInclude Include="core.h">
-      <Filter>Core</Filter>
-    </ClInclude>
     <ClInclude Include="gui.h">
       <Filter>GUI</Filter>
     </ClInclude>
     <ClInclude Include="MainMenu.h">
       <Filter>Scenes\Main scene</Filter>
     </ClInclude>
+    <ClInclude Include="Core\Config.h" />
+    <ClInclude Include="Core\core.h" />
+    <ClInclude Include="Core\functions.h" />
+    <ClInclude Include="Core\GameSettings.h" />
+    <ClInclude Include="Core\Vector2.h" />
+    <ClInclude Include="SettingsMenu.h" />
+    <ClInclude Include="GuiCheckbox.h">
+      <Filter>GUI\GuiCheckbox</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\GUI\check_box_icon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Main menu\GRAVITY_icon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Main menu\New_simulation_icon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Main menu\Quit_icon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Main menu\Settings_icon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Settings scene\Fullscreen_icon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Settings scene\Resolution_icon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Simulation scene\add_object_icon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Simulation scene\main_menu_icon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Simulation scene\pause_icon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Simulation scene\settings_icon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Settings scene\Accept_icon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Settings scene\Cancel_icon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Settings scene\Apply_icon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Settings scene\Settings.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Resources\Fonts\Slabo_font.ttf">
+      <Filter>Resource Files</Filter>
+    </Font>
+    <Font Include="Resources\Fonts\VideoTerminalSc.ttf">
+      <Filter>Resource Files</Filter>
+    </Font>
   </ItemGroup>
 </Project>

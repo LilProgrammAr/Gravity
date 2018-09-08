@@ -8,8 +8,8 @@
 #include "Vector2.h"
 
 namespace core {
-	enum EventList {
-		IDLE,
+	enum class EventList : unsigned short{
+		IDLE = 0,
 		EXIT,
 		NEW_SIMULATION,
 		SETTINGS,

@@ -16,7 +16,7 @@ public:
 	core::EventList checkEvent();
 private:
 	gui::GuiButton
-		gravity,
+		Gravity,
 		newSimulation,
 		settings,
 		quit;

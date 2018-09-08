@@ -26,7 +26,8 @@ void gui::GuiWidget::loadConfig(const core::Config & obj) noexcept
 
 sf::Vector2u gui::GuiWidget::getSize()
 {
-	return image.getSize();
+	return sf::Vector2u(image.getSize().x * sprite.getScale().x,
+						image.getSize().y * sprite.getScale().y);
 }
 
 void gui::GuiWidget::setPosition(const core::Vector2f & pos)

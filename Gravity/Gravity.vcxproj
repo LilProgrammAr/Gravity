@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -125,24 +125,49 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="functions.cpp" />
+    <ClCompile Include="Core\functions.cpp" />
     <ClCompile Include="GuiButton.cpp" />
+    <ClCompile Include="GuiCheckbox.cpp" />
     <ClCompile Include="GuiWidget.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SettingsMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Config.h" />
-    <ClInclude Include="core.h" />
-    <ClInclude Include="functions.h" />
-    <ClInclude Include="GameSettings.h" />
+    <ClInclude Include="Core\Config.h" />
+    <ClInclude Include="Core\core.h" />
+    <ClInclude Include="Core\functions.h" />
+    <ClInclude Include="Core\GameSettings.h" />
     <ClInclude Include="gui.h" />
     <ClInclude Include="GuiButton.h" />
+    <ClInclude Include="GuiCheckbox.h" />
     <ClInclude Include="GuiWidget.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Scene.h" />
-    <ClInclude Include="Vector2.h" />
+    <ClInclude Include="Core\Vector2.h" />
+    <ClInclude Include="SettingsMenu.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Resources\Fonts\Slabo_font.ttf" />
+    <Font Include="Resources\Fonts\VideoTerminalSc.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\GUI\check_box_icon.png" />
+    <Image Include="Resources\Main menu\GRAVITY_icon.png" />
+    <Image Include="Resources\Main menu\New_simulation_icon.png" />
+    <Image Include="Resources\Main menu\Quit_icon.png" />
+    <Image Include="Resources\Main menu\Settings_icon.png" />
+    <Image Include="Resources\Settings scene\Accept_icon.png" />
+    <Image Include="Resources\Settings scene\Apply_icon.png" />
+    <Image Include="Resources\Settings scene\Cancel_icon.png" />
+    <Image Include="Resources\Settings scene\Fullscreen_icon.png" />
+    <Image Include="Resources\Settings scene\Resolution_icon.png" />
+    <Image Include="Resources\Settings scene\Settings.png" />
+    <Image Include="Resources\Simulation scene\add_object_icon.png" />
+    <Image Include="Resources\Simulation scene\main_menu_icon.png" />
+    <Image Include="Resources\Simulation scene\pause_icon.png" />
+    <Image Include="Resources\Simulation scene\settings_icon.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

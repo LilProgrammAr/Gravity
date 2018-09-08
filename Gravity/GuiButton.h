@@ -18,8 +18,8 @@ namespace gui {
 		bool isClicked();
 				
 	private:
-		bool wasPressed;
-		bool wasLarged;
+		bool was_pressed;
+		bool was_larged;
 		bool handleHover();
 
 	};

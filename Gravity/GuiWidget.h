@@ -3,7 +3,7 @@
 #define CLASS_GUI_WIDGET_H	
 
 #include <SFML/Graphics.hpp>
-#include "core.h"
+#include "Core/core.h"
 #include <string>
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -2,7 +2,7 @@
 #ifndef CLASS_SCENE_H
 #define CLASS_SCENE_H
 
-#include "core.h"
+#include "Core/core.h"
 #include "gui.h"
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -17,8 +17,9 @@ public:
 	virtual core::EventList checkEvent() = 0;
 
 protected:
+
 	core::Config cfg;
-	core::GameSettings gs;
+	static core::GameSettings gs;
 
 };
 
