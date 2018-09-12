@@ -42,10 +42,13 @@ bool gui::GuiCheckbox::isChecked()
 			{
 				is_checked = !is_checked;
 				was_pressed = false;
+				return true;
 			}
 	}
+	else
+		was_pressed = false;
 
-	return is_checked;
+	return false;
 }
 
 void gui::GuiCheckbox::setCheched(bool checked)
@@ -53,7 +56,3 @@ void gui::GuiCheckbox::setCheched(bool checked)
 	is_checked = checked;
 }
 
-gui::GuiCheckbox::operator bool()
-{
-	return is_checked;
-}

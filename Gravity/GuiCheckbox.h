@@ -20,7 +20,6 @@ namespace gui {
 		bool isChecked();
 		void setCheched(bool checked);
 
-		operator bool();
 
 	private:
 		bool is_checked;
