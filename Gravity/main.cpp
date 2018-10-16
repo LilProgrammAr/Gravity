@@ -16,7 +16,7 @@ int main() {
 	cfg.window->setFramerateLimit(120);
 					 
 	auto main_menu = new MainMenu(cfg);
-	auto settings_menu = new SettingsMenu(cfg);
+	//auto settings_menu = new SettingsMenu(cfg);
 	
 
 	Scene* current_scene = main_menu;
@@ -30,9 +30,9 @@ int main() {
 			switch (current_scene->checkEvent()) {
 			case core::EventList::NEW_SIMULATION:
 				break;
-			case core::EventList::SETTINGS:
+			/*case core::EventList::SETTINGS:
 				current_scene = settings_menu;
-				break;
+				break;*/
 			case core::EventList::MAIN_MENU:
 				current_scene = main_menu;
 				break;
@@ -51,6 +51,6 @@ int main() {
 	}			
 
 	delete main_menu;
-	delete settings_menu;
+	//delete settings_menu;
 
 }

@@ -6,6 +6,8 @@
 #include "functions.h"
 #include "GameSettings.h"
 #include "Vector2.h"
+ 
+constexpr float MASS_RATIO = 0.6180387;
 
 namespace core {
 	enum class EventList : unsigned short{

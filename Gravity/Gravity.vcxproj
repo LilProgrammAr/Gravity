@@ -125,6 +125,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CelestialBody.cpp" />
     <ClCompile Include="Core\functions.cpp" />
     <ClCompile Include="GuiButton.cpp" />
     <ClCompile Include="GuiCheckbox.cpp" />
@@ -133,8 +134,10 @@
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SettingsMenu.cpp" />
+    <ClCompile Include="Space.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CelestialBody.h" />
     <ClInclude Include="Core\Config.h" />
     <ClInclude Include="Core\core.h" />
     <ClInclude Include="Core\functions.h" />
@@ -147,6 +150,7 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Core\Vector2.h" />
     <ClInclude Include="SettingsMenu.h" />
+    <ClInclude Include="Space.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="Resources\Fonts\Slabo_font.ttf" />

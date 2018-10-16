@@ -44,6 +44,18 @@
     <Filter Include="GUI\GuiCheckbox">
       <UniqueIdentifier>{2d7d4893-ea88-49f2-96ea-dea9012d03c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scenes\Settings scene">
+      <UniqueIdentifier>{9ecbb486-a8b8-4cb7-a4cf-3b4f544f5924}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Space">
+      <UniqueIdentifier>{182bf042-d2ea-44c5-bfc9-b2e668f1de72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Space\Space scene">
+      <UniqueIdentifier>{8f8c0195-910c-4083-b448-c7ccb01221fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Space\Celestial body">
+      <UniqueIdentifier>{879d6233-c805-4059-ae9a-855c9d5a269a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Scene.cpp">
@@ -60,10 +72,16 @@
       <Filter>Scenes\Main scene</Filter>
     </ClCompile>
     <ClCompile Include="Core\functions.cpp" />
-    <ClCompile Include="SettingsMenu.cpp" />
     <ClCompile Include="GuiCheckbox.cpp">
       <Filter>GUI\GuiCheckbox</Filter>
     </ClCompile>
+    <ClCompile Include="SettingsMenu.cpp">
+      <Filter>Scenes\Settings scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CelestialBody.cpp">
+      <Filter>Space\Celestial body</Filter>
+    </ClCompile>
+    <ClCompile Include="Space.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
@@ -86,10 +104,16 @@
     <ClInclude Include="Core\functions.h" />
     <ClInclude Include="Core\GameSettings.h" />
     <ClInclude Include="Core\Vector2.h" />
-    <ClInclude Include="SettingsMenu.h" />
     <ClInclude Include="GuiCheckbox.h">
       <Filter>GUI\GuiCheckbox</Filter>
     </ClInclude>
+    <ClInclude Include="SettingsMenu.h">
+      <Filter>Scenes\Settings scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CelestialBody.h">
+      <Filter>Space\Celestial body</Filter>
+    </ClInclude>
+    <ClInclude Include="Space.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\GUI\check_box_icon.png">

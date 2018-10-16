@@ -70,6 +70,3 @@ bool gui::GuiButton::handleHover()
 	}
 	return isHovered;
 }
-
-
-

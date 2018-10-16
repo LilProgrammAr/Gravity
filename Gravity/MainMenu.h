@@ -18,7 +18,7 @@ private:
 	gui::GuiButton
 		Gravity,
 		newSimulation,
-		settings,
+		//settings,
 		quit;
 
 };
