@@ -15,7 +15,7 @@ CelestialBody::CelestialBody() :
 
 CelestialBody::CelestialBody(float mass, bool fixed) :
 	_mass(mass),
-	_radius(MASS_RATIO * sqrt(mass)),
+	_radius(core::MASS_RATIO * sqrt(mass)),
 	_fixed(fixed),
 	_acceleration(sf::Vector2f(0.0, 0.0))
 {
@@ -33,7 +33,7 @@ void CelestialBody::setRadius(float radius)
 void CelestialBody::setMass(float mass)
 {
 	_mass = mass;
-	setRadius(MASS_RATIO * sqrt(mass));
+	setRadius(core::MASS_RATIO * sqrt(mass));
 }
 
 void CelestialBody::setPosition(sf::Vector2f position)
@@ -60,7 +60,7 @@ void CelestialBody::setAcceleration(float x, float y)
 void CelestialBody::addMass(int mass)
 {
 	_mass += mass;
-	float delta_radius = MASS_RATIO * sqrt(_mass) - _radius;
+	float delta_radius = core::MASS_RATIO * sqrt(_mass) - _radius;
 	_radius += delta_radius;
 	setPosition(getPosition() - sf::Vector2f(delta_radius, delta_radius));
 	_sprite.setRadius(_radius);
@@ -107,9 +107,9 @@ bool CelestialBody::isFixed() const
 }
 
 
-void CelestialBody::draw(sf::RenderWindow* target)
+void CelestialBody::draw(sf::RenderWindow& target)
 {
-	target->draw(_sprite);
+	target.draw(_sprite);
 }
 
 // same

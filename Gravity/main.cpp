@@ -3,6 +3,7 @@
 #include "Core/core.h"
 #include "MainMenu.h"
 #include "SettingsMenu.h"
+#include "Space.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -16,6 +17,8 @@ int main() {
 	cfg.window->setFramerateLimit(120);
 					 
 	auto main_menu = new MainMenu(cfg);
+	auto space = new Space(cfg);
+
 	//auto settings_menu = new SettingsMenu(cfg);
 	
 
@@ -29,6 +32,7 @@ int main() {
 			}
 			switch (current_scene->checkEvent()) {
 			case core::EventList::NEW_SIMULATION:
+				current_scene = space;
 				break;
 			/*case core::EventList::SETTINGS:
 				current_scene = settings_menu;

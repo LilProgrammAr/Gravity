@@ -2,7 +2,6 @@
 #ifndef CLASS_CELESTIALBODDY_H
 #define CLASS_CELESTIALBODDY_H
 
-#include <SFML\Graphics.hpp>
 #include "Core\core.h"
 
 class CelestialBody
@@ -40,7 +39,7 @@ public:
 	float getRadius() const;
 	bool isFixed() const;
 
-	void draw(sf::RenderWindow* target);
+	void draw(sf::RenderWindow& target);
 	void update();
 };
 

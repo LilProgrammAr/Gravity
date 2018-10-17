@@ -16,6 +16,7 @@ public:
 private:
 	std::vector<CelestialBody> bodies;
 	void computeScene();
+	core::EventList checkEvent() override;
 };
 
 #endif //CLASS_SPACE_H

@@ -6,8 +6,8 @@
 #include "functions.h"
 #include "GameSettings.h"
 #include "Vector2.h"
- 
-constexpr float MASS_RATIO = 0.6180387;
+
+#include <SFML\Graphics.hpp>
 
 namespace core {
 	enum class EventList : unsigned short{
@@ -20,6 +20,10 @@ namespace core {
 		LOC_SETTINGS,
 		APPLY_SETTINGS
 	};
+
+	constexpr float MASS_RATIO = 0.6180387;
+	constexpr float G = 1e-2;
+	constexpr int START_COUNT = 6;
 }
 
 #endif //CORE_H
