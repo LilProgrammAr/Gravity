@@ -33,14 +33,53 @@ void Space::computeScene()
 {
 	for (int i = 0; i < bodies.size(); ++i) {
 		for (int j = i + 1; j < bodies.size(); ++j) {
+
 			auto dir = bodies[j].getPosition() - bodies[i].getPosition();
 			float r_sqrd = dir.x * dir.x + dir.y * dir.y;
 			float F = core::G * bodies[i].getMass() * bodies[j].getMass() / r_sqrd;
-			if (r_sqrd < 1e-3)
-				r_sqrd = 0.1;
+			int r_sum = bodies[i].getRadius() + bodies[j].getRadius();
+
 			normalize(dir);
 			bodies[j].move(-dir * F);
 			bodies[i].move(dir * F);
+
+			/////////////////////////////////////////////////////////////////////////
+			//Collision detection
+			if (r_sqrd <= r_sum * r_sum) {
+				float i_to_j = bodies[i].getMass() / bodies[j].getMass();
+				float j_to_i = 1 / i_to_j;
+
+				if (i_to_j > 1) {
+					bodies[i].addMass(bodies[j].getMass() * 0.9);
+					bodies.erase(bodies.begin() + j);
+					++j;
+					//continue;
+				}
+				else {
+					bodies[j].addMass(bodies[i].getMass() * 0.9);
+					bodies.erase(bodies.begin() + i);
+					++i;
+					//continue;
+				}
+			}
+			////////////////////////////////////////////////////////////////////////
+			//Out-of-borders detection
+			else {
+				auto pos_i = bodies[i].getPosition();
+				auto pos_j = bodies[j].getPosition();
+				if (pos_i.x < 0 || pos_i.x > cfg.window->getSize().x ||
+					pos_i.y < 0 || pos_i.y > cfg.window->getSize().y) {
+					bodies.erase(bodies.begin() + i);
+					++i;
+				}
+				if (pos_j.x < 0 || pos_j.x > cfg.window->getSize().x ||
+					pos_j.y < 0 || pos_j.y > cfg.window->getSize().y) {
+					bodies.erase(bodies.begin() + j);
+					++j;
+				}
+			}
+			////////////////////////////////////////////////////////////////////////
+
 		}
 	}
 

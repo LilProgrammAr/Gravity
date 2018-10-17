@@ -23,7 +23,7 @@ namespace core {
 
 	constexpr float MASS_RATIO = 0.6180387;
 	constexpr float G = 1e-2;
-	constexpr int START_COUNT = 6;
+	constexpr int START_COUNT = 10;
 }
 
 #endif //CORE_H
