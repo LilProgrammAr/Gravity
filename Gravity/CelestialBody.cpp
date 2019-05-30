@@ -106,6 +106,11 @@ bool CelestialBody::isFixed() const
 	return _fixed;
 }
 
+void CelestialBody::setActive(bool active)
+{
+	isActive = active;
+}
+
 
 void CelestialBody::draw(sf::RenderWindow& target)
 {
@@ -115,6 +120,6 @@ void CelestialBody::draw(sf::RenderWindow& target)
 // same
 void CelestialBody::update()
 {
-	if (!_fixed)
+	if (!_fixed || !isActive)
 		_sprite.move(_acceleration);
 }

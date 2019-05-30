@@ -5,10 +5,10 @@
 MainMenu::MainMenu(const core::Config & cfg) :
 	Scene(cfg) 
 {
-	Gravity.loadFromFile("Resources/Main menu/GRAVITY_icon.png");
-	newSimulation.loadFromFile("Resources/Main menu/New_simulation_icon.png");
+	Gravity.loadFromFile(core::RES_PATH + "Main menu/GRAVITY_icon.png");
+	newSimulation.loadFromFile(core::RES_PATH + "Main menu/New_simulation_icon.png");
 	//settings.loadFromFile("Resources/Main menu/Settings_icon.png");
-	quit.loadFromFile("Resources/Main menu/Quit_icon.png");
+	quit.loadFromFile(core::RES_PATH + "Main menu/Quit_icon.png");
 
 	Gravity.loadConfig(cfg);
 	newSimulation.loadConfig(cfg);

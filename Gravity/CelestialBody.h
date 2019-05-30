@@ -14,6 +14,7 @@ private:
 
 	sf::CircleShape _sprite;
 	sf::Vector2f _acceleration;
+	bool isActive;
 
 public:
 	CelestialBody();
@@ -38,6 +39,8 @@ public:
 	float getMass() const;
 	float getRadius() const;
 	bool isFixed() const;
+
+	void setActive(bool);
 
 	void draw(sf::RenderWindow& target);
 	void update();

@@ -12,11 +12,19 @@ class Space : public Scene
 public:
 	Space(const core::Config& cfg);
 	void draw();
+	void addObject();
+
+	core::EventList checkEvent() override;
 
 private:
 	std::vector<CelestialBody> bodies;
 	void computeScene();
-	core::EventList checkEvent() override;
+	void add_object();
+	gui::GuiButton main_menu, 
+		add_body;
+	bool addingObject;
+	std::unique_ptr<CelestialBody> temp_object;
+	
 };
 
 #endif //CLASS_SPACE_H

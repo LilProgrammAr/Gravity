@@ -24,7 +24,10 @@ namespace core {
 	constexpr float MASS_RATIO = 0.6180387;
 	constexpr float G = 1e-4;
 	constexpr int START_COUNT = 50;
-	constexpr float SPEED_MULT = 0.7;
+	constexpr float DEFAULT_MASS = 75;
+	constexpr int MASS_STEP = 5;
+	constexpr float SPEED_MULT = 0.5;
+	const static std::string RES_PATH = "Resources/";
 }
 
 #endif //CORE_H

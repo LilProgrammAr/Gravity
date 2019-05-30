@@ -18,6 +18,7 @@ int main() {
 	auto main_menu = new MainMenu(cfg);
 	auto space = new Space(cfg);
 
+
 	//auto settings_menu = std::make_unique<Scene>(SettingsMenu(cfg));
 	
 
@@ -36,6 +37,9 @@ int main() {
 			switch (current_scene->checkEvent()) {
 			case core::EventList::NEW_SIMULATION:
 				current_scene = space;
+				break;
+			case core::EventList::ADD_PLANET:
+				space->addObject();
 				break;
 			/*case core::EventList::SETTINGS:
 				current_scene = settings_menu.get();
