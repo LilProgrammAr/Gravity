@@ -40,13 +40,13 @@ void Space::computeScene()
 			int r_sum = bodies[i].getRadius() + bodies[j].getRadius();
 
 			normalize(dir);
-			bodies[j].move(-dir * F);
-			bodies[i].move(dir * F);
+			bodies[j].move(-dir * F * static_cast<float>(cfg.clock->getElapsedTime().asMilliseconds()) * core::SPEED_MULT);
+			bodies[i].move(dir * F * static_cast<float>(cfg.clock->getElapsedTime().asMilliseconds()) * core::SPEED_MULT);
 
 			/////////////////////////////////////////////////////////////////////////
 			//Collision detection
 			if (r_sqrd <= r_sum * r_sum) {
-				float i_to_j = bodies[i].getMass() / bodies[j].getMass();
+				float i_to_j = bodies[i].getMass() / bodies[j].getMass() * 1;
 				float j_to_i = 1 / i_to_j;
 
 				if (i_to_j > 1) {
@@ -89,10 +89,7 @@ void Space::computeScene()
 
 core::EventList Space::checkEvent()
 {
-	if (cfg.event->type == sf::Event::KeyPressed &&
-		cfg.event->key.code == sf::Keyboard::Escape)
-		return core::EventList::EXIT;
-	else return core::EventList::IDLE;
+	return core::EventList::IDLE;
 }
 
 template<typename vector_t>
