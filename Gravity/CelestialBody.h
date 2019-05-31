@@ -27,6 +27,7 @@ public:
 	void setPosition(float x, float y);
 	void setAcceleration(sf::Vector2f acceleration);
 	void setAcceleration(float x, float y);
+	void setOpacity(int op);
 
 	void addMass(int mass);
 

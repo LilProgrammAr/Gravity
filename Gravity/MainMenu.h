@@ -10,10 +10,14 @@ class MainMenu : public Scene
 {
 public:
 	MainMenu(const core::Config& cfg);
-	~MainMenu() = default;
+	virtual ~MainMenu() = default;
 
 	void draw();
-	core::EventList checkEvent();
+	core::EventList checkEvent() override;
+	void pause() override {}
+	void resume() override {}
+
+
 private:
 	gui::GuiButton
 		Gravity,

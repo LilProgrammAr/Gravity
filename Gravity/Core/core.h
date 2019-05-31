@@ -8,6 +8,7 @@
 #include "Vector2.h"
 
 #include <SFML\Graphics.hpp>
+#include <functional>
 
 namespace core {
 	enum class EventList : unsigned short{
@@ -21,12 +22,12 @@ namespace core {
 		APPLY_SETTINGS
 	};
 
-	constexpr float MASS_RATIO = 0.6180387;
-	constexpr float G = 1e-4;
+	constexpr float MASS_RATIO = 0.6180387f;
+	constexpr float G = 1e-4f;
 	constexpr int START_COUNT = 50;
 	constexpr float DEFAULT_MASS = 75;
 	constexpr int MASS_STEP = 5;
-	constexpr float SPEED_MULT = 0.5;
+	static float SPEED_MULT = 0.5;
 	const static std::string RES_PATH = "Resources/";
 }
 

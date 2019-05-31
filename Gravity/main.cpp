@@ -23,21 +23,43 @@ int main() {
 	
 
 	Scene* current_scene = main_menu;
-
+	bool paused = false;
 	while (cfg.window->isOpen()) {
 		
 		cfg.clock->restart();
 		while (cfg.window->pollEvent(*(cfg.event))) {
-			if (cfg.event->type == sf::Event::Closed) {
-				cfg.window->close();
+			if (cfg.event->type == sf::Event::KeyPressed &&
+				cfg.event->key.code == sf::Keyboard::Space) {
+				if (paused) {
+					current_scene->resume();
+					paused = false;
+				}
+				else {
+					current_scene->pause();
+					paused = true;
+				}
 			}
+			if (cfg.event->type == sf::Event::Closed)
+				cfg.window->close();
 			if (cfg.event->type == sf::Event::KeyPressed &&
 				cfg.event->key.code == sf::Keyboard::Escape)
 				cfg.window->close();
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+				if (paused) {
+					current_scene->resume();
+					paused = false;
+				}
+				else {
+					current_scene->pause();
+					paused = true;
+				}
+			}
 			switch (current_scene->checkEvent()) {
 			case core::EventList::NEW_SIMULATION:
+				delete space;
+				space = new Space(cfg);
 				current_scene = space;
-				break;
+				break;	
 			case core::EventList::ADD_PLANET:
 				space->addObject();
 				break;

@@ -23,6 +23,7 @@ namespace gui {
 		sf::Vector2u getSize();
 
 		void setPosition(const core::Vector2f& pos);
+		void setOpacity(int op);
 		sf::Vector2f getPosition() noexcept;
 
 	protected:

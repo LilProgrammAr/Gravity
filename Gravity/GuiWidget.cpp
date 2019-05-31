@@ -36,6 +36,13 @@ void gui::GuiWidget::setPosition(const core::Vector2f & pos)
 									  image.getSize().y / 2.f));
 }
 
+void gui::GuiWidget::setOpacity(int op)
+{
+	auto color = sprite.getColor();
+	color.a = op;
+	sprite.setColor(color);
+}
+
 sf::Vector2f gui::GuiWidget::getPosition() noexcept
 {
 	return sprite.getPosition();

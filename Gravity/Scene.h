@@ -15,11 +15,14 @@ public:
 
 	virtual void draw() = 0;
 	virtual core::EventList checkEvent() = 0;
+	virtual void pause() = 0;
+	virtual void resume() = 0;;
 
 protected:
 
 	core::Config cfg;
 	static core::GameSettings gs;
+	bool paused;
 
 };
 

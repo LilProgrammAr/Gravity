@@ -10,17 +10,19 @@ namespace gui {
 	class GuiButton : public GuiWidget
 	{
 	public:
-		GuiButton() = default;
+		GuiButton();
 		GuiButton(const core::Config& cfg);
 		~GuiButton() = default;
 
 		void draw() override;
 		bool isClicked();
+		void notifyIf(std::function<bool()>);
 				
 	private:
 		bool was_pressed;
 		bool was_larged;
 		bool handleHover();
+		std::function<bool()> notify_if;
 
 	};
 }

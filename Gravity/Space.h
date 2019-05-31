@@ -15,6 +15,9 @@ public:
 	void addObject();
 
 	core::EventList checkEvent() override;
+	void pause() override;
+	void resume() override;
+
 
 private:
 	std::vector<CelestialBody> bodies;

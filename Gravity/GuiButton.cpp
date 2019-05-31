@@ -2,10 +2,21 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+gui::GuiButton::GuiButton() :
+	was_pressed(false),
+	was_larged(false)
+{
+	notify_if = []() {return false; };
+}
+
 gui::GuiButton::GuiButton(const core::Config & cfg) :
 	was_pressed(false),
 	was_larged(false),
-	GuiWidget(cfg) {}
+	GuiWidget(cfg)
+{
+	notify_if = []() {return false; };
+}
+
 
 void gui::GuiButton::draw()
 {
@@ -14,6 +25,7 @@ void gui::GuiButton::draw()
 
 bool gui::GuiButton::isClicked()
 {
+	if (notify_if()) return true;
 	auto isHovered = handleHover();
 	if (isHovered) {
 		if (cfg.event->type == sf::Event::MouseButtonPressed &&
@@ -46,6 +58,11 @@ bool gui::GuiButton::isClicked()
 
 	return false;
 
+}
+
+void gui::GuiButton::notifyIf(std::function<bool()> notifyer)
+{
+	notify_if = notifyer;
 }
 
 bool gui::GuiButton::handleHover()

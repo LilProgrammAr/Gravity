@@ -27,6 +27,11 @@ Space::Space(const core::Config& cfg) : Scene(cfg)
 		cfg.window->getSize().x - main_menu.getSize().x * 2.5,
 		cfg.window->getSize().y - main_menu.getSize().y));
 
+	add_body.notifyIf([]() {
+		return sf::Keyboard::isKeyPressed(sf::Keyboard::LControl) && 
+			sf::Keyboard::isKeyPressed(sf::Keyboard::A);
+	});
+
 	bodies.reserve(core::START_COUNT);
 	for (int i = 0; i < bodies.capacity(); ++i)
 		bodies.emplace_back(uid_mass(re));
@@ -37,7 +42,7 @@ Space::Space(const core::Config& cfg) : Scene(cfg)
 
 void Space::draw()
 {
-	computeScene();
+	if (!paused) computeScene();
 	for (auto& bodie : bodies)
 		bodie.draw(*(cfg.window));
 	main_menu.draw();
@@ -46,6 +51,7 @@ void Space::draw()
 
 void Space::addObject()
 {
+	if (addingObject) return;
 	addingObject = true;
 	temp_object = std::make_unique<CelestialBody>(core::DEFAULT_MASS);
 }
@@ -129,9 +135,26 @@ void Space::add_object()
 
 core::EventList Space::checkEvent()
 {
+	if (paused) return core::EventList::IDLE;
 	if (main_menu.isClicked()) return core::EventList::MAIN_MENU;
 	if (add_body.isClicked()) return core::EventList::ADD_PLANET;
 	return core::EventList::IDLE;
+}
+
+void Space::pause()
+{
+	paused = true;
+	for (auto& body : bodies) body.setOpacity(127);
+	main_menu.setOpacity(127);
+	add_body.setOpacity(127);
+}
+
+void Space::resume()
+{
+	paused = false;
+	for (auto& body : bodies) body.setOpacity(255);
+	main_menu.setOpacity(255);
+	add_body.setOpacity(255);
 }
 
 template<typename vector_t>

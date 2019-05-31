@@ -57,6 +57,13 @@ void CelestialBody::setAcceleration(float x, float y)
 	_acceleration = sf::Vector2f(x, y);
 }
 
+void CelestialBody::setOpacity(int op)
+{
+	auto color = _sprite.getFillColor();
+	color.a = op;
+	_sprite.setFillColor(color);
+}
+
 void CelestialBody::addMass(int mass)
 {
 	_mass += mass;

@@ -12,4 +12,7 @@ core::GameSettings Scene::gs = core::GameSettings{
 };
 
 Scene::Scene(const core::Config & obj) :
-	cfg(obj) {}
+	cfg(obj),
+	paused(false)
+{
+}
